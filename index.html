@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musical Chess 3D</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #87CEEB; /* Match the scene background */
+      }
+      #info {
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        pointer-events: none;
+        z-index: 10;
+      }
+      #controls {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        z-index: 10;
+      }
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 100;
+      }
+      #loading-spinner {
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 5px solid white;
+        width: 40px;
+        height: 40px;
+        margin: 10px auto;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      #error {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: red;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        border: 2px solid red;
+        z-index: 100;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">Musical Chess 3D</div>
+    <div id="controls">
+      Controls:<br>
+      - Left click: Select/move piece<br>
+      - Right click + drag: Rotate view<br>
+      - Mouse wheel: Zoom in/out<br>
+      - R: Reset view
+    </div>
+    <div id="loading">
+      <div>Loading Musical Chess 3D</div>
+      <div id="loading-spinner"></div>
+      <div>Please wait while assets are loading...</div>
+    </div>
+    <div id="error"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
